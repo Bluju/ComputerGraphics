@@ -1,0 +1,86 @@
+
+
+We want to compare and contrast three manifestations of an image:
+  1.) as an image file stored on a computer's disk drive,
+  2.) as a data structure loaded into in a CPU's memory,
+  3.) as an image displayed on a computer screen.
+
+Suppose we have an image that is h pixels tall by w pixels wide.
+
+We want to compare the ways the image's pixel data can be stored
+as an image file on the disk drive, as a data structure in the
+CPU's memory, and as data in the computer's hardware framebuffer.
+
+Remember that a pixel is three bytes of data which represent the
+intensities of the three primary colors, red, green, and blue.
+
+A hardware framebuffer would be a two-dimensional array of triples
+of RGB bytes,
+    byte[h][w][3]
+and each entry in the array would be connected to an electrical
+circuit that converts that binary byte into an intensity of color
+at the corresponding pixel on the computer's screen (these circuits
+are called digital-to-analog converters, or DACs).
+
+An in-memory data structure to hold the image's pixel data can take
+one of many different shapes. Here are some common examples.
+    byte[h][w][3]     // 3 bytes per pixel (rgb)
+    int[h][w][3]      // 3 ints per pixel (waste a lot of space)
+    int[h][w]         // packed rgb bytes (each int holds an r, g, and b byte)
+    float[h][w][3]    // floats between 0.0 and 1.0
+    double[h][w][3]   // doubles between 0.0 and 1.0
+    Color[h][w]       // using Java's Color class
+    byte[h * w * 3]   // row major array of rgb bytes
+    int[h * w]        // row major array of packed rgb bytes
+
+
+An un-compressed image file format stores the bytes of pixel data
+as a 1-dimensional array on the hard drive (since ALL files are
+1-dimensional streams of bytes).
+    byte[h * w * 3]
+Usually the row major format is used with each pixel stored in the
+rgb order. Sometimes, the data is stored more like this,
+    byte[3][h * w]
+where this is supposed to represent the idea of three 1-dimensional
+arrays, one after the other in the file. This is called a "planar"
+format with the first byte[h * w] array being all the red pixels
+from the image (the image's "red plane"), the next byte[h * w] array
+being all green pixels, etc. (IrfanView will let you save an image in
+this "planar" format.)
+
+Here is a question. If the image file just stores h*w*3 bytes, how
+can we read the image file and know what it contains? For example, if
+the file has 6,000 bytes, is it a 40 by 50 pixel image, or a 50 by 40
+pixel image, or 20 by 100 pixel image? If it is a 40 by 50 pixel image,
+are the first three bytes the rgb values of the first pixel, or the red
+values for the first three pixels?
+
+If you have 6,000 bytes of pixel data, it is impossible to know, without
+more information, how that data is organized into rows and columns. So
+all image file formats include "metadata" in their files (meta data is
+"data about the data"). The metadata is usually at the beginning of the
+file and specifies how many rows and columns there are, and also what
+the byte order is (for example rgb, or bgr, or planar rgb).
+
+The PPM file format is nice in that is stores its metadata at the
+beginning of the file as ASCII text, with the binary pixel data
+coming after the ASCII metadata.
+
+If an image file does not contain metadata, it is often called a
+"raw file format". IrfanView can open files in a "raw" format, but
+when we ask IrfanView to open a raw file, it first prompts us with
+a dialog box where we have to tell IrfanView about the file's metadata.
+
+https://en.wikipedia.org/wiki/Metadata
+
+
+Most image file formats, like PNG, JPEG, GIF, differ from PPM files
+in that they use some kind of compression algorithm to reduce the size
+of the pixel data stored in the file. For these image file formats the
+size of the file (in bytes) is much less than 3*h*w, where h and w are
+the height and width of the image (in pixels). For any given image size,
+the final size of the image file depends on the particular compression
+algorithm used and even on the appearance of the image (simple images
+compress more than complex images).
+
+https://en.wikipedia.org/wiki/Image_file_format

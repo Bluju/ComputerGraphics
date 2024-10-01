@@ -1,0 +1,2 @@
+
+java  -cp .;..  ClientProgram  ..\assets\image-file.ppm

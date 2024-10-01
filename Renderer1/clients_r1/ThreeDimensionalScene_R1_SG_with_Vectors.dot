@@ -1,0 +1,54 @@
+strict digraph {
+graph [ordering="out"];
+graph [fontname="helvetica"];
+node  [fontname="helvetica"];
+edge  [fontname="helvetica"];
+scene [label="Scene: ThreeDimensionalScene_R1"];
+Camera [label="Camera: 
+perspective = true"];
+scene -> Camera;
+positionList [label="List<Position>"];
+scene -> positionList;
+_p0 [label="Position: p0"];
+positionList -> _p0;
+_p0_Matrix [label="Vector:
+[x,y,z] = [  -4.00000     0.00000   -18.00000]"];
+_p0 -> _p0_Matrix;
+_m1 [label="Model: Cube"];
+_p0 -> _m1;
+_p2 [label="Position: p1"];
+positionList -> _p2;
+_p2_Matrix [label="Vector:
+[x,y,z] = [   0.00000    -2.00000   -14.00000]"];
+_p2 -> _p2_Matrix;
+_m3 [label="Model: Tetrahedron"];
+_p2 -> _m3;
+_p4 [label="Position: p2"];
+positionList -> _p4;
+_p4_Matrix [label="Vector:
+[x,y,z] = [   4.00000    -3.00000   -10.00000]"];
+_p4 -> _p4_Matrix;
+_m5 [label="Model: Octahedron"];
+_p4 -> _m5;
+_p6 [label="Position: p3"];
+positionList -> _p6;
+_p6_Matrix [label="Vector:
+[x,y,z] = [  -4.00000    -3.00000   -10.00000]"];
+_p6 -> _p6_Matrix;
+_m7 [label="Model: Dodecahedron"];
+_p6 -> _m7;
+_p8 [label="Position: p4"];
+positionList -> _p8;
+_p8_Matrix [label="Vector:
+[x,y,z] = [   4.00000     0.00000   -18.00000]"];
+_p8 -> _p8_Matrix;
+_m9 [label="Model: Icosahedron"];
+_p8 -> _m9;
+_p10 [label="Position: p5"];
+positionList -> _p10;
+_p10_Matrix [label="Vector:
+[x,y,z] = [   0.00000    -7.00000   -14.00000]"];
+_p10 -> _p10_Matrix;
+_m11 [label="Model: PanelXZ"];
+_p10 -> _m11;
+}

@@ -1,0 +1,6 @@
+[InternetShortcut]
+URL=https://cscircles.cemc.uwaterloo.ca/java_visualize/#code=import+java.awt.Color%3B%0Apublic+class+PixelArrays%0A%7B%0A+++public+static+void+main(String%5B%5D+args)+%0A+++%7B%0A++++++//+This+shows+why+we+prefer+row-major+storage.%0A+++++++int%5B%5D+++++a+%3D+new++int%5B4+*+5%5D%3B%0A++++++byte%5B%5D%5B%5D%5B%5D+b+%3D+new+byte%5B4%5D%5B5%5D%5B3%5D%3B%0A++++++Color%5B%5D%5B%5D++c+%3D+new+Color%5B4%5D%5B5%5D%3B%0A++++++for+(int+i+%3D+0%3B+i+%3C+4%3B+%2B%2Bi)+%7B%0A+++++++++for+(int+j+%3D+0%3B+j+%3C+5%3B+%2B%2Bj)+%7B%0A++++++++++++c%5Bi%5D%5Bj%5D+%3D+Color.black%3B%0A+++++++++%7D%0A++++++%7D%0A+++%7D%0A%7D&mode=edit
+IDList=
+HotKey=0
+[{000214A0-0000-0000-C000-000000000046}]
+Prop3=19,11

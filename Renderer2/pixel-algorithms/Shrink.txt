@@ -1,0 +1,35 @@
+
+Shrink an image to half of its original size.
+
+     Every 4 pixels,                   become 1 pixel.
+    +-------+-------+                   +-------+
+    |       |       |                   |       |
+  i |   O   |   X   |               i/2 |       |
+    |       |       |                   |       |
+    +-------+-------+                   +-------+
+    |       |       |                      j/2
+i+1 |   @   |   #   |
+    |       |       |
+    +-------+-------+
+        j      j+1
+
+
+The four original pixels could be replaced
+by just the upper left-hand corner pixel.
+
+    +-------+
+    |       |
+i/2 |   O   |
+    |       |
+    +-------+
+       j/2
+
+A better strategy would be to replace the four
+original pixels with their average value.
+
+    +---------+
+    | o+X+@+# |
+i/2 | ------- |
+    |    4    |
+    +---------+
+        j/2

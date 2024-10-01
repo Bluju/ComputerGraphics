@@ -1,0 +1,16 @@
+read the section in readme.txt in renderer1 about framebuffer and viewport
+
+because viewports have their own coordinate system, it allows your data to be position independent.
+If you need to move an image on your screen, can just change the position of the viewport
+
+to get transparency in images, need to 'blend' the images
+take the average of the front image color and the rear image color (60% front, 40% back)
+
+Dont read directly from the file, let the framebuffer class read the data from another framebuffer,
+then copy data from framebuffer into the viewport
+
+The squares are 100px by 100px
+
+for the diagonal shift by 1
+
+for the circles use the equation (x-x0)^2 + (y-y0)^2

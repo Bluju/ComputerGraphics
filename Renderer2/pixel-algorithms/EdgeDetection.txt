@@ -1,0 +1,25 @@
+
+Find pixels where the color has a large rate-of-change.
+
+For each pixel (x, y), approximate the length of the
+color gradient vector at (x, y).
+
+                +-------+
+                |       |
+   y-1          |  cA   |
+                |       |
+        +-------+-------+-------+
+        |       |       |       |
+  y     |  cL   |  c0   |  cR   |
+        |       |       |       |
+        +-------+-------+-------+
+                |       |
+   y+1          |  cB   |
+                |       |
+                +-------+
+         x-1        x      x+1
+
+
+   deltaH(c0) = (cR - cL) / 2
+   deltaV(c0) = (cA - cB) / 2
+   grad(c0) = sqrt( deltaH*deltaH + deltaV*deltaV )

@@ -1,0 +1,6 @@
+[InternetShortcut]
+URL=https://cscircles.cemc.uwaterloo.ca/java_visualize/#code=public+class+PixelArrays%0A%7B%0A+++public+static+void+main(String%5B%5D+args)+%0A+++%7B%0A++++++//+This+shows+why+we+prefer+row-major+storage.%0A+++++++int%5B%5D+++++a+%3D+new++int%5B4+*+5%5D%3B%0A++++++byte%5B%5D%5B%5D%5B%5D+b+%3D+new+byte%5B4%5D%5B5%5D%5B3%5D%3B%0A%0A+++%7D%0A%7D&mode=edit
+IDList=
+HotKey=0
+[{000214A0-0000-0000-C000-000000000046}]
+Prop3=19,11

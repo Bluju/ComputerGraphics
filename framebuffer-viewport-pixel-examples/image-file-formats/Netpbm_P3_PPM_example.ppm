@@ -1,0 +1,15 @@
+P3
+# http://en.wikipedia.org/wiki/Netpbm_format#PPM_example
+#
+# The P3 means the color data is in ASCII.
+# The line below means 3 columns and 2 rows.
+# The next line means 255 is the max color value, 
+# Then the pixel data is six RGB triplets (in ASCII).
+3 2
+255
+255   0   0
+  0 255   0
+  0   0 255
+255 255   0
+255 255 255
+  0   0   0

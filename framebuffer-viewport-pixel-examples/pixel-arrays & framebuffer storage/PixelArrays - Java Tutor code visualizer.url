@@ -1,0 +1,6 @@
+[InternetShortcut]
+URL=https://pythontutor.com/visualize.html#code=public%20class%20PixelArrays%0A%7B%0A%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%0A%20%20%7B%0A%20%20%20%20//%20This%20shows%20why%20we%20prefer%20row-major%20storage.%0A%20%20%20%20%20int%5B%5D%20%20%20%20%20a%20%3D%20new%20%20int%5B4%20*%205%5D%3B%0A%20%20%20%20byte%5B%5D%5B%5D%5B%5D%20b%20%3D%20new%20byte%5B4%5D%5B5%5D%5B3%5D%3B%0A%0A%20%20%20%20System.out.println%28java.util.Arrays.toString%28a%29%29%3B%0A%20%20%20%20System.out.println%28java.util.Arrays.deepToString%28b%29%29%3B%0A%20%20%7D%0A%7D&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false
+IDList=
+HotKey=0
+[{000214A0-0000-0000-C000-000000000046}]
+Prop3=19,11
